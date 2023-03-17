@@ -1,5 +1,7 @@
 # Template for writing paper with markdown+pandoc
 
+**Please change "Workflow permissions" in repository settings otherwise your ALL GitHub Actions will fail.
+
 ## Setup your develop environment
 
 ```console
