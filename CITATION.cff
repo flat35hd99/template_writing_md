@@ -1,0 +1,6 @@
+cff-version: 1.2.0
+message: "Even if you use this template, you don't need to cite it as below."
+title: "Template for writing a manuscript in Markdown"
+version: 0.0.1
+date-released: 2023-03-18
+url: "https://github.com/yamatolab/template_writing_md"
