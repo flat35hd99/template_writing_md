@@ -23,7 +23,7 @@ header-includes:
   - \doublespacing
   - \usepackage{color}
 bibliography:
-  - "template.bib"
+  - "sample.bib"
 
 link-citations: true
 urlcolor: blue

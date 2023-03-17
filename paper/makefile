@@ -37,7 +37,7 @@ aip.pdf: aip.md templates/aip.tex $(BIBFILES)
 		--quiet \
 		-f markdown \
 		--from=markdown+tex_math_single_backslash+tex_math_dollars+raw_tex \
-		--reference-doc=template.docx \
+		--reference-doc=templates/default.docx \
 		--filter pandoc-crossref \
 		--citeproc \
 		--csl=$(CSL) \
