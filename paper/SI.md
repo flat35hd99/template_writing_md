@@ -7,7 +7,7 @@ header-includes:
   - \usepackage{setspace}
   - \doublespacing
 bibliography:
-  - "template.bib"
+  - "sample.bib"
 link-citations: True
 urlcolor: blue
 refcolor: blue
