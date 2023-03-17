@@ -6,7 +6,7 @@ DRAWED_FIGURE=$(DRAW_SCRIPT:script/draw/%.py=figure/%.png)
 all: format directory pdf word
 
 directory:
-	mkdir -p figure
+	mkdir -p figure output
 
 # Generate graphs
 figure/%.png: script/draw/%.py
