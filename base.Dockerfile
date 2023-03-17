@@ -5,7 +5,7 @@ ENV PATH="$PATH:/home/coder/.local/bin"
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y -qq \
-    && echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections \
+    && echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections \
     && apt-get install -y -qq \
         python3 \
         python3-pip \
