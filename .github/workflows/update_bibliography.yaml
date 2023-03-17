@@ -1,0 +1,25 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  update_bibliography:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download bibliography
+        run: |
+          bash .github/workflows/scripts/download_bibliography.sh
+        env:
+          ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
+          ZOTERO_GROUP_OR_USER_ID: ${{ secrets.ZOTERO_GROUP_OR_USER_ID }}
+      - name: Commit, push, and create pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Update bibliography
+          branch: update-bibliography
+          title: Update bibliography
+          body: |
+            This pull request updates the bibliography.
+          labels: |
+            update-bibliography

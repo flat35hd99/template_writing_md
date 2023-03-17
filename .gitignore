@@ -1,0 +1,16 @@
+# Outputs
+output/
+figure/
+
+# Pandoc and LaTeX
+*.pdf
+*.docx
+*.tex
+!paper/templates/*.docx
+!paper/templates/*.tex
+
+# Python
+__pycache__/
+
+# For Mac users
+.DS_Store

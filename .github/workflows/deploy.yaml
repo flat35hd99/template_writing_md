@@ -1,0 +1,40 @@
+name: Deploy to GitHub Pages and release page
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - v*
+  release:
+    types: [published]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    uses: ./.github/workflows/builder.yaml
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download built artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: built_contents
+          path: ./dist
+
+      - name: Move paper contents to the root directory
+        run: |
+          mv ./dist/paper/* ./dist/
+          rmdir ./dist/paper
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: output
